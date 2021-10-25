@@ -4,10 +4,10 @@
   window.myLib.body = document.querySelector('body');
 
   window.myLib.closestAttr = function(item, attr) {
-    var node =  item;
+    let node =  item;
 
     while(node) {
-      var attrValue = node.getAttribute(attr);
+      const attrValue = node.getAttribute(attr);
       if (attrValue) {
         return attrValue;
       }
@@ -16,10 +16,10 @@
     }
 
     return null;
-  }; 
+  };
 
   window.myLib.closestItemByClass = function(item, className) {
-    var node =  item;
+    let node =  item;
 
     while(node) {
       if (node.classList.contains(className)) {
@@ -30,7 +30,7 @@
     }
 
     return null;
-  }; 
+  };
 
   window.myLib.toggleScroll = function() {
     myLib.body.classList.toggle('no-scroll');

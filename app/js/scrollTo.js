@@ -1,26 +1,26 @@
 ;(function(){
-  var scroll = function(target) {
-    var targetTop = target.getBoundingClientRect().top;
-    var scrollTop = window.pageYOffset;
-    var targetOffsetTop = targetTop + scrollTop;
-    var headerOffset = document.querySelector('.header-page').clientHeight;
+  const scroll = function(target) {
+    const targetTop = target.getBoundingClientRect().top;
+    const scrollTop = window.pageYOffset;
+    const targetOffsetTop = targetTop + scrollTop;
+    const headerOffset = document.querySelector('.header-page').clientHeight;
 
     window.scrollTo(0, targetOffsetTop - headerOffset);
   }
 
   myLib.body.addEventListener('click', function(e) {
-    var target = e.target;
-    var scrollToItemClass = myLib.closestAttr(target,'data-scroll-to');
+    const target = e.target;
+    const scrollToItemClass = myLib.closestAttr(target,'data-scroll-to');
 
     if (scrollToItemClass === null) {
       return;
     }
 
     e.preventDefault(); // Отмена стандартного поведения
-    var scrollToItem = document.querySelector('.' + scrollToItemClass);
+    const scrollToItem = document.querySelector(`.${scrollToItemClass}`);
 
     if (scrollToItem) {
       scroll(scrollToItem)
     }
-  }); 
+  });
 })();
